@@ -13,6 +13,11 @@ public class Game implements Serializable{
         return false;
     }
 
+    public void restartGame( Game game) {
+        game.player1.restartPlayer();
+        game.player2.restartPlayer();
+    }
+
     public Game() {
         this.player1 = new Player(true);
         this.player2 = new Player();
@@ -42,8 +47,8 @@ public class Game implements Serializable{
         return choice;
     }
 
-    
-    public void executePhase( Player attacker, Player guesser) {
+    // Return amount of damage dealt
+    public int executePhase( Player attacker, Player guesser) {
 
         // If wrong guess, perfectGuess is disabled
         boolean perfectGuess = true;
@@ -61,12 +66,16 @@ public class Game implements Serializable{
         // Defender parries if guesses are perfect
         if (perfectGuess) {
             attacker.takeDamage(15);
-            System.out.println("\n-Perfect Guess! Guesser parries-");
+            return -15;
+            //System.out.println("\n-Perfect Guess! Guesser parries-");
         // If perfectAttack = 3, deal bonus damage
         } else if ( perfectAttack == 3) {
             guesser.takeDamage(15);
-            System.out.println("\n-Perfect attack! Dealing bonus damage-");
+            return 45;
+            //System.out.println("\n-Perfect attack! Dealing bonus damage-");
         }
+
+        return damage;
     }
 
 //    public static void main(String args[]) {

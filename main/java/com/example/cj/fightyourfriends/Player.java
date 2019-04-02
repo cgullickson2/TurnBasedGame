@@ -39,6 +39,10 @@ public class Player {
         return this.health;
     }
 
-    public static void main(String[] args) {
+    public void restartPlayer() {
+        this.health = STARTING_HEALTH;
     }
+
+//    public static void main(String[] args) {
+//    }
 }

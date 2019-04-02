@@ -1,3 +1,42 @@
 <resources>
     <string name="app_name">Fight Your Friends</string>
+
+    // ---Intermediate page strings---
+
+    // Buttons
+    <string name="attack_high">Attack High</string>
+    <string name="attack_low">Attack Low</string>
+    <string name="block_high">Block High</string>
+    <string name="block_low">Block Low</string>
+
+    // Title
+    <string name="attacking">You are Attacking</string>
+    <string name="defending">You are Defending</string>
+    <string name="defend_dialogue">Try to guess your opponent\'s moves</string>
+    <string name="attack_dialogue">Try to damage your opponent</string>
+
+    // Choices
+    <string name="choice1">Choice 1</string>
+    <string name="choice2">Choice 2</string>
+    <string name="choice3">Choice 3</string>
+    <string name="confirm_choices">Confirm Choices</string>
+
+    // ---Main page strings---
+
+    // End of game
+    <string name="win_dialogue">You Win!</string>
+    <string name="lose_dialogue">You Lose</string>
+
+    // Reporting
+    <string name="report_gave_damage">You did %1$d damage to the enemy</string>
+    <string name="report_gave_damage_perf">Perfect Attack! \nYou did 45 damage to the enemy!</string>
+    <string name="report_took_damage_perf">Perfect Attack from enemy! \nYou took 45 damage from the enemy!</string>
+    <string name="report_took_damage">You took %1$d damage from the enemy</string>
+    <string name="report_took_damage_parry">Parried by enemy! \nYou took 15 damage from the enemy</string>
+    <string name="report_gave_damage_parry">You parried the enemy! \nYou gave 15 damage to the enemy</string>
+
+    <string name="begin_game_dialogue">Click continue to begin the game</string>
+    <string name="continue_game">Continue</string>
+    <string name="play_again">Play Again?</string>
+
 </resources>

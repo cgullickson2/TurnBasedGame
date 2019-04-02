@@ -20,6 +20,7 @@ public class intermediate extends AppCompatActivity {
         final TextView textView2 = findViewById(R.id.textView2);
         final TextView textView3 = findViewById(R.id.textView3);
         final TextView textView4 = findViewById(R.id.textView4);
+        final TextView textView5 = findViewById(R.id.textView5);
 
         final Button button1 = findViewById(R.id.button1);
         final Button button2 = findViewById(R.id.button2);
@@ -33,45 +34,97 @@ public class intermediate extends AppCompatActivity {
         for (int i = 0; i < 3; i++)
             choices[i] = 0;
 
-        if (this.getIntent().getBooleanExtra("attack", false)) {
-            textView4.setText("You are Attacking");
+        // Determine current players role
+        final boolean attacking = this.getIntent().getBooleanExtra("attack", false);
+
+        // Initialize choice texts to "choice x"
+        textView1.setText(R.string.choice1);
+        textView2.setText(R.string.choice2);
+        textView3.setText(R.string.choice3);
+
+        // Initialize buttons to attacking or blocking
+        if (attacking) {
+            button1.setText(R.string.attack_high);
+            button2.setText(R.string.attack_high);
+            button3.setText(R.string.attack_high);
+            button4.setText(R.string.attack_low);
+            button5.setText(R.string.attack_low);
+            button6.setText(R.string.attack_low);
         } else {
-            textView4.setText("You are Defending");
+            button1.setText(R.string.block_high);
+            button2.setText(R.string.block_high);
+            button3.setText(R.string.block_high);
+            button4.setText(R.string.block_low);
+            button5.setText(R.string.block_low);
+            button6.setText(R.string.block_low);
+        }
+
+        // Display if attacking or defending with dialogue
+        if (attacking) {
+            textView4.setText(getString(R.string.attacking));
+            textView5.setText(getString(R.string.attack_dialogue));
+        } else {
+            textView4.setText(R.string.defending);
+            textView5.setText(getString(R.string.defend_dialogue));
         }
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                textView1.setText("Attack Chosen");
                 choices[0] = 1;
+                if (attacking) {
+                    textView1.setText(R.string.attack_high);
+                } else {
+                    textView1.setText(R.string.block_high);
+                }
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                textView2.setText("Attack Chosen");
                 choices[1] = 1;
+                if (attacking) {
+                    textView2.setText(R.string.attack_high);
+                } else {
+                    textView2.setText(R.string.block_high);
+                }
             }
         });
         button3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                textView3.setText("Attack Chosen");
                 choices[2] = 1;
+                if (attacking) {
+                    textView3.setText(R.string.attack_high);
+                } else {
+                    textView3.setText(R.string.block_high);
+                }
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                textView1.setText("Defense Chosen");
                 choices[0] = 0;
+                if (attacking) {
+                    textView1.setText(R.string.attack_low);
+                } else {
+                    textView1.setText(R.string.block_low);
+                }
             }
         });
         button5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                textView2.setText("Defense Chosen");
                 choices[1] = 0;
+                if (attacking) {
+                    textView2.setText(R.string.attack_low);
+                } else {
+                    textView2.setText(R.string.block_low);
+                }
             }
         });
         button6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                textView3.setText("Defense Chosen");
                 choices[2] = 0;
+                if (attacking) {
+                    textView3.setText(R.string.attack_low);
+                } else {
+                    textView3.setText(R.string.block_low);
+                }
             }
         });
         button7.setOnClickListener(new View.OnClickListener() {
